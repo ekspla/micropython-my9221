@@ -1,3 +1,6 @@
+NOV. 2023, 12 LED version added by ekspla.
+
+
 # MicroPython MY9221
 
 A MicroPython library for 10 segment LED bar graph modules using the MY9221 LED driver.
