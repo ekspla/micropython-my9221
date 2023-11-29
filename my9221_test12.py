@@ -1,7 +1,5 @@
 from machine import Pin
 from my9221_12 import MY9221
-from sys import exit
-from time import sleep_ms
 
 # Nucleo F446RE
 ledbar = MY9221(Pin('D4'), Pin('D5'))
