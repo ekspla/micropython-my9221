@@ -27,7 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from time import sleep_ms
+from time import sleep_us
 from machine import Pin
 
 class MY9221:
@@ -40,13 +40,14 @@ class MY9221:
 
     def _latch(self):
         self._d(0)
-        sleep_ms(1)
+        sleep_us(230)
         for i in range(4):
             self._d(1)
             self._d(0)
-        sleep_ms(1)
+        sleep_us(1)
 
-    def _write16(self, data):
+    @micropython.viper
+    def _write16(self, data: int):
         for i in range(15,-1,-1):
             self._d((data >> i) & 1)
             state = self._c()
